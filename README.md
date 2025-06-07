@@ -6,7 +6,7 @@ This demo leverages the *requests* library for direct API interaction and *azure
 
 ## 📑 Table of Contents:
 * [Part 1: Configuring Solution Environment](#part-1-configuring-solution-environment)
-* [Part 2: Performing Image Edits and Visualization](#part-2-performing-image-edits-and-visualisation)
+* [Part 2: Performing Image Edits and Visualisation](#part-2-performing-image-edits-and-visualisation)
 
 ---
 
