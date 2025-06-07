@@ -11,15 +11,15 @@ This demo leverages the *requests* library for direct API interaction and *azure
 ## Part 1: Configuring Solution Environment
 To use the notebook, set up your Azure OpenAI environment and install Python packages.
 
-1.1 Azure OpenAI Service Setup
+1. Azure OpenAI Service Setup
 Ensure you have an Azure OpenAI Service resource with the GPT-image-1 model deployed. The notebook assumes your deployment is named gpt-image-1.
 
-1.2 Authentication
+2. Authentication
 This demo uses Azure Active Directory (Entra ID) authentication via DefaultAzureCredential from azure.identity. This credential type automatically handles various authentication methods.
 
 To enable this, ensure your environment is set up for Azure authentication, e.g., by logging in via az login (Azure CLI) or setting relevant environment variables for service principals.
 
-1.3 Environment Variables
+3. Environment Variables
 Set the following environment variables, pointing to your Azure OpenAI GPT-image-1 deployment:
 
 | Environment Variable     | Description                                                                        |
@@ -28,7 +28,7 @@ Set the following environment variables, pointing to your Azure OpenAI GPT-image
 | AOAI_DEPLOYMENT_NAME     | The name of your GPT-image-1 deployment (e.g., gpt-image-1).                       |
 | AOAI_API_VERSION         | The API version for image edits (e.g., 2025-04-01-preview).                        |
 
-1.4 Install Required Python Packages
+4. Install Required Python Packages
 ``` Bash
 pip install requests Pillow ipython azure-identity
 ```
@@ -79,5 +79,8 @@ This is an example of an input image that could be used for editing in this note
 ![Input_Image](images/input_image.jpeg)
 
 Example Output:
-Below is an example of an edited image generated during the development of this notebook, based on an input image and a prompt like "Add a giant, friendly robot behind the bird." Your actual output may vary.
+Below is an example of an edited image generated during the development of this notebook, based on an input image and a prompt like "Add a giant, friendly robot behind the bird."
 ![Output_Image](images/output_image_edited.jpeg)
+
+> [!NOTE]
+> Your actual output may vary.
