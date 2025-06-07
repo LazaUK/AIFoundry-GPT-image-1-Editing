@@ -36,56 +36,58 @@ pip install requests Pillow ipython azure-identity
 ```
 
 ## Part 2: Performing Image Edits and Visualisation
-The GPT-image-1.ipynb notebook outlines the core image editing logic:
+The `GPT-image-1.ipynb` notebook outlines the core image editing logic:
 
-API URL Construction: Builds the endpoint URL using environment variables.
-Input Image: Loads the image from INPUT_IMAGE_PATH (e.g., ./input_image.jpeg).
-Secure Authentication: Obtains an access token using DefaultAzureCredential.
-API Request: Sends a multipart/form-data POST request to the GPT-image-1 API, including:
-The input image file.
-A prompt string (e.g., "Add a giant, friendly robot behind the bird.").
-Parameters like n (number of images, typically 1) and size (e.g., 1024x1024).
-Response Processing: On success, it decodes the base64-encoded edited image, saves it to OUTPUT_IMAGE_PATH (e.g., ./output_image_edited.png), and displays it.
-Error Handling: Includes robust error reporting for API failures.
+* **API URL Construction:** Builds the endpoint URL using environment variables.
+* **Input Image:** Loads the image from `INPUT_IMAGE_PATH` (e.g., `./input_image.jpeg`).
+* **Secure Authentication:** Obtains an access token using `DefaultAzureCredential`.
+* **API Request:** Sends a `multipart/form-data` POST request to the GPT-image-1 API, including:
+    * The input image file.
+    * A `prompt` string (e.g., `"Add a giant, friendly robot behind the bird."`).
+    * Parameters like `n` (number of images, typically 1) and `size` (e.g., `1024x1024`), along with other options.
+* **Response Processing:** On success, it decodes the base64-encoded edited image, saves it to `OUTPUT_IMAGE_PATH` (e.g., `./output_image_edited.png`), and displays it.
+* **Error Handling:** Includes robust error reporting for API failures.
+
 Example API call structure from the notebook:
 
 ``` Python
-        # Input image
-        files = {
-            "image": (
-                os.path.basename(INPUT_IMAGE_PATH),
-                image_file,
-                "image/jpeg")
-        }
+# Input image
+files = {
+    "image": (
+        os.path.basename(INPUT_IMAGE_PATH),
+        image_file,
+        "image/jpeg")
+}
 
-        # Input prompt
-        data = {
-            "prompt": PROMPT,
-            "n": 1,
-            "size": "1024x1024",
-            "quality": "medium",
-            "output_compression": 100,
-            "output_format": "jpeg"
-        }
+# Input prompt and parameters
+data = {
+    "prompt": PROMPT,
+    "n": 1,
+    "size": "1024x1024",
+    "quality": "medium",
+    "output_compression": 100,
+    "output_format": "jpeg"
+}
 
-        # Entra ID Auth
-        credential = DefaultAzureCredential()
-        token = credential.get_token("https://cognitiveservices.azure.com/.default")
-        headers = {
-            "Authorization": f"Bearer {token.token}"
-        }
+# Entra ID Auth
+credential = DefaultAzureCredential()
+token = credential.get_token("https://cognitiveservices.azure.com/.default")
+headers = {
+    "Authorization": f"Bearer {token.token}"
+}
 
-        # Image API request
-        print("Making API call to edit the image...")
-        response = requests.post(
-            API_URL,
-            headers = headers,
-            files = files,
-            data = data
-        )
+# Image API request
+print("Making API call to edit the image...")
+response = requests.post(
+    API_URL,
+    headers = headers,
+    files = files,
+    data = data
+)
 ```
 
-Feel free to modify the PROMPT string to experiment with different image editing requests.
+> [!NOTE]
+> Feel free to modify the PROMPT string to experiment with different image editing requests.
 
 ### Example Input:
 This is an example of an input image that could be used for editing in this notebook.
