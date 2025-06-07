@@ -14,18 +14,18 @@ ___
 
 ---
 
-### Part 1: Configuring Solution Environment
+## Part 1: Configuring Solution Environment
 To use the notebook, set up your Azure OpenAI environment and install Python packages.
 
-#### 1.1 Azure OpenAI Service Setup
+### 1.1 Azure OpenAI Service Setup
 Ensure you have an **Azure OpenAI Service** resource with the **GPT-image-1 model** deployed.
 
-#### 1.2 Authentication
+### 1.2 Authentication
 This demo uses **Azure Entra ID** authentication via `DefaultAzureCredential` from `azure.identity`. This credential type automatically handles various authentication methods.
 
 To enable this, ensure your environment is set up for Azure authentication, e.g., by logging in via `az login` (Azure CLI) or setting relevant environment variables for service principals.
 
-#### 1.3 Environment Variables
+### 1.3 Environment Variables
 Set the following environment variables, pointing to your Azure OpenAI GPT-image-1 deployment:
 
 | Environment Variable     | Description                                                                             |
@@ -34,7 +34,7 @@ Set the following environment variables, pointing to your Azure OpenAI GPT-image
 | AOAI_DEPLOYMENT_NAME     | The name of your GPT-image-1 deployment (e.g., gpt-image-1).                            |
 | AOAI_API_VERSION         | The API version for image edits (e.g., 2025-04-01-preview).                             |
 
-#### 1.4 Install Required Python packages
+### 1.4 Install Required Python packages
 ``` Bash
 pip install requests Pillow ipython azure-identity
 ```
