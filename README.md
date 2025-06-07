@@ -4,9 +4,9 @@ This repo demonstrates how to use Azure OpenAI **GPT-image-1**, a powerful image
 
 This demo leverages the *requests* library for direct API interaction and *azure-identity* library for secure Azure Entra ID authentication.
 
-## Table of Contents:
+## 📑 Table of Contents:
 - [Part 1: Configuring Solution Environment]()
-- [Part 2: Performing Image Edits and Visualisation]
+- [Part 2: Performing Image Edits and Visualisation]()
 
 ## Part 1: Configuring Solution Environment
 To use the notebook, set up your Azure OpenAI environment and install Python packages.
@@ -22,16 +22,18 @@ To enable this, ensure your environment is set up for Azure authentication, e.g.
 1.3 Environment Variables
 Set the following environment variables, pointing to your Azure OpenAI GPT-image-1 deployment:
 
-AOAI_API_BASE: Your Azure OpenAI endpoint URL (e.g., https://laziz-AOAI-WUS3.openai.azure.com).
-AOAI_DEPLOYMENT_NAME: The name of your GPT-image-1 deployment (e.g., gpt-image-1).
-AOAI_API_VERSION: The API version for image edits (e.g., 2025-04-01-preview).
+| Environment Variable     | Description                                                                        |
+| :----------------------- | :--------------------------------------------------------------------------------- |
+| AOAI_API_BASE            | Your Azure OpenAI endpoint URL (e.g., https://laziz-AOAI-WUS3.openai.azure.com).   |
+| AOAI_DEPLOYMENT_NAME     | The name of your GPT-image-1 deployment (e.g., gpt-image-1).                       |
+| AOAI_API_VERSION         | The API version for image edits (e.g., 2025-04-01-preview).                        |
 
 1.4 Install Required Python Packages
 ``` Bash
 pip install requests Pillow ipython azure-identity
 ```
 
-## Part 2: Performing Image Edits and Visualization
+## Part 2: Performing Image Edits and Visualisation
 The GPT-image-1.ipynb notebook outlines the core image editing logic:
 
 API URL Construction: Builds the endpoint URL using environment variables.
