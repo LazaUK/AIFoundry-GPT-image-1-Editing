@@ -5,7 +5,7 @@ This repo demonstrates how to use Azure OpenAI **GPT-image-1**, a powerful image
 This demo leverages the *requests* library for direct API interaction and *azure-identity* library for secure Azure Entra ID authentication.
 
 ___
-🎧 Listen to the audio podcast, "Image Makeovers with GPT-image-1: Behind the Code", where we explore the content of this notebook in a beginner-friendly way. You can find it [here](https://youtu.be/heyLTbfDo6k).
+🎧 You may listen to the audio podcast, ["Image Makeovers with GPT-image-1: Behind the Code"](https://youtu.be/heyLTbfDo6k), where we explore the content of this notebook in a beginner-friendly way.
 ___
 
 ## 📑 Table of Contents:
